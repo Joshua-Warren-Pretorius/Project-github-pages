@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exploring Marine Plastics Detection in the SA EEZ</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#home">Marine Plastics Detection</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+         <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+         <li class="nav-item"><a class="nav-link" href="#literature">Literature Review</a></li>
+         <li class="nav-item"><a class="nav-link" href="#methodology">Methodology</a></li>
+         <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+         <li class="nav-item"><a class="nav-link" href="#discussion">Discussion</a></li>
+         <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
+         <li class="nav-item"><a class="nav-link" href="#references">References</a></li>
+         <li class="nav-item"><a class="nav-link" href="#acknowledgements">Acknowledgements</a></li>
+         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+       </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section / Home -->
+  <section id="home" class="container-fluid bg-light pt-5 mt-5">
+    <div class="container py-5 text-center">
+      <h1 class="display-4">Exploring the Integration of Satellite Optical and SAR Imagery for the Detection of Marine Plastics in the South African EEZ</h1>
+      <p class="lead">Joshua Pretorius &mdash; Supervised by Dr. Bolelang Sibolla and Shelley Haupt</p>
+      <p class="small">Date: February 29, 2024</p>
+      <!-- Optional hero image -->
+      <img src="hero-image.jpg" alt="Marine Plastics" class="img-fluid my-4">
+      <!-- Abstract excerpt -->
+      <div class="bg-white p-4 shadow-sm">
+        <h3>Abstract</h3>
+        <p>This project investigates the integration of optical (Sentinel-2, RapidEye) and Synthetic Aperture Radar (SAR, Sentinel-1) imagery to detect floating marine plastics within the South African Exclusive Economic Zone. By addressing the limitations of each sensor type – optical’s sensitivity to cloud cover and SAR’s noise issues – the study develops a scalable, cloud-based methodology for marine plastic monitoring. The outcomes are intended to support targeted clean-up operations and inform environmental policy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section id="introduction" class="container my-5">
+    <h2>1. Introduction</h2>
+    <h4>1.1 Background</h4>
+    <p>
+      Marine plastic pollution is a critical global challenge with severe ecological, economic, and health impacts. Annually, millions of tonnes of plastic waste enter our oceans, adversely affecting marine life, human health, and the blue economy. In South Africa, plastic mismanagement contributes significantly to marine debris, particularly along densely populated coastal zones.
+    </p>
+    <h4>1.2 Problem Statement</h4>
+    <p>
+      There is limited research on the scalable detection of floating plastics in the South African EEZ. Optical imagery is constrained by cloud cover, while SAR offers weather‐independent monitoring but has its own limitations. This study addresses these challenges by integrating both sensor types to enhance detection accuracy.
+    </p>
+    <h4>1.3 Research Questions & Aim</h4>
+    <ul>
+      <li>Can open-source SAR and optical imagery independently detect marine floating debris?</li>
+      <li>What is the potential of integrating these datasets for enhanced detection?</li>
+    </ul>
+    <p>
+      <strong>Aim:</strong> To use remote sensing for detecting floating marine plastics in the SA EEZ by integrating optical and SAR data.
+    </p>
+    <h4>1.4 Objectives & Significance</h4>
+    <ul>
+      <li>Review and assess existing detection methodologies.</li>
+      <li>Identify vulnerable areas in the SA EEZ.</li>
+      <li>Apply thresholding techniques on cloud-based platforms.</li>
+      <li>Develop an introductory machine learning model.</li>
+      <li>Evaluate the integration of SAR and optical data for improved detection.</li>
+    </ul>
+    <p>
+      The significance of this research lies in its potential to support better-targeted clean-up operations and policymaking, while also advancing remote sensing applications in developing regions.
+    </p>
+  </section>
+
+  <!-- Literature Review -->
+  <section id="literature" class="container my-5">
+    <h2>2. Literature Review</h2>
+    <p>
+      This section reviews key studies on marine plastic pollution, optical remote sensing, SAR, cloud-based processing, and machine learning applications in environmental monitoring. It identifies the strengths and limitations of previous methods, and highlights research gaps, notably the need for integrated approaches in the South African context.
+    </p>
+    <p>
+      Optical sensors capture the spectral signatures of floating plastics using indices such as the Plastic Index (PI) and Floating Debris Index (FDI). SAR sensors, meanwhile, use microwave backscatter to detect surface roughness differences between water and debris. Studies such as Themistocleous et al. (2020) and Biermann et al. (2020) have pioneered these indices, while recent work (e.g., Simpson et al. (2022)) demonstrates the potential of SAR for detecting plastic islands. However, limitations such as cloud cover (optical) and speckle noise (SAR) suggest that an integrated approach may yield better results.
+    </p>
+  </section>
+
+  <!-- Methodology -->
+  <section id="methodology" class="container my-5">
+    <h2>3. Methodology</h2>
+    <p>
+      This study employs a three-fold workflow: (1) optical imagery processing, (2) SAR processing, and (3) integration of both data sources. Data are acquired from Sentinel-2, RapidEye, and Sentinel-1. Processing is carried out on a cloud-based platform (DUNIA) and locally using tools such as QGIS, SNAP, and Jupyter Notebook.
+    </p>
+    
+    <h4>3.1 Event and Study Area</h4>
+    <p>
+      A significant flooding event on April 22, 2019, was identified that increased the influx of plastics into Durban Harbour. The study area focuses on the southern Durban region within the SA EEZ, covering key zones such as Durban Harbour and the Blue Lagoon river mouth.
+    </p>
+    
+    <h4>3.2 Optical Imagery Processing</h4>
+    <ul>
+      <li><strong>Data Acquisition:</strong> Sentinel-2 (10 m, Level-2A) and RapidEye (5 m) images were acquired to capture post-event conditions.</li>
+      <li><strong>Pre-processing:</strong> Images were clipped to the area of interest, resampled for consistency, and normalized (Min-Max normalization).</li>
+      <li><strong>Index Calculation:</strong> Spectral indices (PI, FDI, and NDVI) were computed to enhance the separation between floating plastics and water.</li>
+      <li><strong>Thresholding:</strong> Standard deviation-based thresholds were applied to isolate outlier pixels representing potential debris.</li>
+    </ul>
+    
+    <h4>3.3 SAR Processing</h4>
+    <ul>
+      <li><strong>Data Acquisition:</strong> Sentinel-1 GRD imagery (VV & VH polarizations) was downloaded for dates coinciding with optical data.</li>
+      <li><strong>Pre-processing:</strong> Procedures included orbital file application, thermal noise removal, radiometric calibration, speckle filtering (Sigma Lee filter), and ellipsoidal correction.</li>
+      <li><strong>CFAR Detection:</strong> A Constant False Alarm Rate (CFAR) method was applied using a 7×7 training window and a 2×2 guard cell to detect backscatter anomalies indicative of floating plastics.</li>
+    </ul>
+    
+    <h4>3.4 Data Integration & Machine Learning</h4>
+    <p>
+      In order to leverage the strengths of both sensor types, optical and SAR detections were overlaid. The Marine Debris Archive (MARIDA) provided labelled training data for supervised machine learning, facilitating an exploratory model (Random Forest) to predict floating debris. This integrated approach aims to reduce false positives and enhance overall detection accuracy.
+    </p>
+    
+    <!-- Methodology Flowchart -->
+    <div class="text-center my-4">
+      <img src="methodology-flowchart.jpg" alt="Comprehensive Methodology Flowchart" class="img-fluid">
+      <p class="caption">Figure: Comprehensive Workflow Integrating Optical and SAR Data for Marine Plastics Detection</p>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="container my-5">
+    <h2>4. Results</h2>
+    <p>
+      Analysis of the optical and SAR data revealed distinct signatures of marine debris in the study area. Optical indices (PI, FDI, NDVI) highlighted outlier pixels along the harbour and river mouths, while SAR CFAR detection identified areas with anomalously high backscatter.
+    </p>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="optical-results.jpg" alt="Optical Results Map" class="img-fluid">
+        <p class="caption">Figure: Optical Index Map (PI/FDI) highlighting potential floating debris.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="sar-results.jpg" alt="SAR CFAR Detection Map" class="img-fluid">
+        <p class="caption">Figure: SAR CFAR Detection Map showing backscatter anomalies.</p>
+      </div>
+    </div>
+    <p class="mt-4">
+      Integration of both methods showed overlapping detections in key areas, confirming the presence of marine plastics post-flooding. These findings support the hypothesis that combining optical and SAR data improves detection robustness.
+    </p>
+  </section>
+
+  <!-- Discussion -->
+  <section id="discussion" class="container my-5">
+    <h2>5. Discussion</h2>
+    <p>
+      The study demonstrates that while optical imagery provides high-resolution spatial detail, its effectiveness is limited by cloud cover. SAR imagery, with its all-weather capability, complements optical methods by offering consistent detection even in adverse conditions. The integrated approach minimizes false positives (e.g., ships mistaken for debris) and improves overall accuracy. However, challenges such as sensor noise, varying sea conditions, and limited training data for machine learning remain.
+    </p>
+  </section>
+
+  <!-- Conclusion -->
+  <section id="conclusion" class="container my-5">
+    <h2>6. Conclusion</h2>
+    <p>
+      Integrating optical and SAR remote sensing for detecting marine plastics in the SA EEZ is a promising approach. The combined methodology overcomes individual sensor limitations and provides a scalable, cloud-based solution for environmental monitoring. Future work should focus on refining machine learning models and extending this framework to larger areas.
+    </p>
+  </section>
+
+  <!-- References -->
+  <section id="references" class="container my-5">
+    <h2>7. References</h2>
+    <ul>
+      <li>Aretoulaki, E., Ponis, S. and Plakas, G. (2021) ‘Marine Plastic Littering: Review of Socio-economic Impacts’, <em>Journal of Sustainable Development of Energy, Water and Environment Systems</em>, 16, pp. 276–300.</li>
+      <li>Baberayemi, et al. (2019) [Details of plastic mismanagement in SA].</li>
+      <li>Biermann, L., Clewley, D., Martinez-Vicente, V. and Topouzelis, K. (2020) ‘Finding Plastic Patches in Coastal Waters Using Optical Satellite Data’, <em>Scientific Reports</em>, 10, p. 5364.</li>
+      <li>Gonzaga, et al. (2021) [SAR and optical detection study].</li>
+      <li>Jamali, &amp; Mahdianpari (2021) [Machine learning and cloud-based processing for marine debris].</li>
+      <li>Themistocleous, K., Papoutsa, C., Michaelides, S. and Hadjimitsis, D. (2020) ‘Investigating Detection of Floating Plastic Litter from Space Using Sentinel-2 Imagery’, <em>Remote Sensing</em>, 12(16), p. 2648.</li>
+      <li>Simpson, M.D., Marino, A., de Maagt, P., Gandini, E., Hunter, P., Spyrakos, E., Tyler, A. and Telfer, T. (2022) ‘Monitoring of Plastic Islands in River Environment Using Sentinel-1 SAR Data’, <em>Remote Sensing</em>, 14(18), p. 4473.</li>
+      <li>[Additional references as appropriate]</li>
+    </ul>
+  </section>
+
+  <!-- Acknowledgements -->
+  <section id="acknowledgements" class="container my-5">
+    <h2>Acknowledgements</h2>
+    <p>
+      I extend my sincere gratitude to my supervisors, Dr. Bolelang Sibolla and Shelley Haupt, for their invaluable support and guidance. I also thank my friends and family for their encouragement throughout this project.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container my-5">
+    <h2>Contact</h2>
+    <p>
+      For more information about this project, please contact:
+    </p>
+    <p>
+      <strong>Joshua Pretorius</strong><br>
+      Email: your.email@domain.com<br>
+      University of Pretoria, Department of Geography, Geoinformatics & Meteorology
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Joshua Pretorius. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
